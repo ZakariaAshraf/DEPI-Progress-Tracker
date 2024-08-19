@@ -11,4 +11,4 @@ The most Important part: the UI should reflect the user status in parts (backgro
 
 Active: green color
 Pending: orange color
-Blocked: red color
+Blocked: red color 
