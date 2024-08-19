@@ -2,15 +2,13 @@
 
 A new Flutter project.
 
-## Getting Started
+## Description of task
+1-Create user class that contains name , score, status. (status is enum with 3 states(Active, Pending, Blocked)
+2- Create Profile Screen (called ProfilePage) that contains , AppBar, With title (name of the student) , Centered container with width = 250 , height = 250...
+3- The Cantered container contains text that display the user's score .
 
-This project is a starting point for a Flutter application.
+The most Important part: the UI should reflect the user status in parts (background of the appbar , background of the centered container  of the score).|
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Active: green color
+Pending: orange color
+Blocked: red color
