@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_task_2/user.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-
   const MyAppBar({Key? key, required this.title}) : super(key: key);
 
   @override
@@ -14,25 +14,25 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
        // mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Icon(Icons.arrow_back_outlined),
-          SizedBox(
+          const Icon(Icons.arrow_back_outlined),
+          const SizedBox(
             width: 120,
           ),
           Expanded(
             child: Text(
               title,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 50,
           ),
           Container(
-            child: Center(child: Text("follow",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple),),),
+            child: const Center(child: Text("follow",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple),),),
             width: 60,
             height: 30,
             decoration: BoxDecoration(
-              color: Color(0xff9E9E9EFF),
+              color: const Color(0xff9E9E9EFF),
               borderRadius: BorderRadius.circular(10),
             ),
           ),
@@ -43,5 +43,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(150);
+  Size get preferredSize => const Size.fromHeight(150);
 }

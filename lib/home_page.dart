@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task_2/custom_app_bar.dart';
+import 'package:flutter_task_2/user.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final User user;
+  HomePage({super.key, required this.user});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const MyAppBar(title: "@amrbella"),
+      appBar:  MyAppBar(title: user.userName),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -21,32 +24,32 @@ class HomePage extends StatelessWidget {
               color: Colors.brown,
               shape: BoxShape.circle,
             ),
-            child: const CircleAvatar(
+            child:  CircleAvatar(
               foregroundImage: AssetImage(
-                "assets/images/amr_bella.jpeg",
+                user.image!,
               ),
               backgroundColor: Colors.white,
             ),
           ),
-          const Column(
+           Column(
             children: [
-              Text("Amr Bella",
+              Text(user.name,
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 25)),
-              Text("Cairo, Egypt",
+              Text(user.address,
                   style: TextStyle(
                       color: Color.fromRGBO(0, 0, 0, 130),
                       fontWeight: FontWeight.bold,
                       fontSize: 25)),
             ],
           ),
-          const Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "220  ",
+                user.followers.toString(),
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
               ),
@@ -59,7 +62,7 @@ class HomePage extends StatelessWidget {
                 width: 20,
               ),
               Text(
-                "150  ",
+                user.following.toString(),
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
               ),
