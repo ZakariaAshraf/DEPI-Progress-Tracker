@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task_2/custom_app_bar.dart';
 import 'package:flutter_task_2/user.dart';
+import 'package:flutter_task_2/welcome_screen.dart';
 
 class HomePage extends StatelessWidget {
-  final User user;
-  HomePage({super.key, required this.user});
+  static String routeName="HomePage";
+  HomePage({super.key,});
 
 
   @override
   Widget build(BuildContext context) {
+
+    final args = ModalRoute.of(context)!.settings.arguments as Arguments;
+
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar:  MyAppBar(title: user.userName),
+      appBar:  MyAppBar(title: args.user.userName),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -26,19 +30,19 @@ class HomePage extends StatelessWidget {
             ),
             child:  CircleAvatar(
               foregroundImage: AssetImage(
-                user.image!,
+                args.user.image!,
               ),
               backgroundColor: Colors.white,
             ),
           ),
            Column(
             children: [
-              Text(user.name,
+              Text(args.user.name,
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 25)),
-              Text(user.address,
+              Text(args.user.address,
                   style: TextStyle(
                       color: Color.fromRGBO(0, 0, 0, 130),
                       fontWeight: FontWeight.bold,
@@ -49,7 +53,7 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                user.followers.toString(),
+                args.user.followers.toString(),
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
               ),
@@ -62,7 +66,7 @@ class HomePage extends StatelessWidget {
                 width: 20,
               ),
               Text(
-                user.following.toString(),
+                args.user.following.toString(),
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
               ),
@@ -166,4 +170,8 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+class Arguments{
+  final User user;
+  Arguments({required this.user});
 }

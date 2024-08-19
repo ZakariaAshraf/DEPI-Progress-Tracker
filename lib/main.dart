@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_task_2/home_page.dart';
 import 'package:flutter_task_2/user.dart';
+import 'package:flutter_task_2/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Task 2',
-      home:HomePage(user: user1,),
+      //home: HomePage(user: user1,),
+      initialRoute: WelcomeScreen.routeName,
+      routes: {
+        WelcomeScreen.routeName:(context)=>WelcomeScreen(),
+        HomePage.routeName:(context)=>HomePage(),
+      },
     );
   }
 }

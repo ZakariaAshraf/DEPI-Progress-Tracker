@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_task_2/user.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
+  final String ?title;
   const MyAppBar({Key? key, required this.title}) : super(key: key);
 
   @override
@@ -14,13 +14,13 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
        // mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Icon(Icons.arrow_back_outlined),
+           IconButton( onPressed: () {  Navigator.pop(context);},icon:Icon(Icons.arrow_back_outlined) ,),
           const SizedBox(
             width: 120,
           ),
           Expanded(
             child: Text(
-              title,
+              title!,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
